@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dbac1dfb-3085-49bd-ade8-5083677651c7" name="Default" comment="" />
+    <list default="true" id="dbac1dfb-3085-49bd-ade8-5083677651c7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,12 +12,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+    <leaf>
       <file leaf-file-name="Autocoderlstm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Autocoderlstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="199" column="64" lean-forward="true" selection-start-line="183" selection-start-column="8" selection-end-line="199" selection-end-column="64" />
+            <state relative-caret-position="435">
+              <caret line="238" column="31" lean-forward="false" selection-start-line="238" selection-start-column="31" selection-end-line="238" selection-end-column="31" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -26,7 +28,7 @@
       <file leaf-file-name="AutocoderlstmTest.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AutocoderlstmTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
+            <state relative-caret-position="644">
               <caret line="328" column="23" lean-forward="false" selection-start-line="328" selection-start-column="20" selection-end-line="328" selection-end-column="23" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -35,32 +37,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReadData.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ReadData.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3618">
-              <caret line="204" column="29" lean-forward="false" selection-start-line="204" selection-start-column="29" selection-end-line="204" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1674">
-              <caret line="94" column="16" lean-forward="false" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="attention.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/attention.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-90">
+            <state relative-caret-position="18">
               <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -69,25 +49,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="util_Attention.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/util_Attention.py">
+      <file leaf-file-name="Seq2Seq.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Seq2Seq.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+            <state relative-caret-position="887">
+              <caret line="236" column="50" lean-forward="false" selection-start-line="236" selection-start-column="32" selection-end-line="236" selection-end-column="50" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#23#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Seq2Seq.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Seq2Seq.py">
+      <file leaf-file-name="attention-MotionPrediction.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/attention-MotionPrediction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+            <state relative-caret-position="342">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hard_decisions_to_data_then_nn.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/contrib/tensor_forest/hybrid/python/models/hard_decisions_to_data_then_nn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="565">
+              <caret line="42" column="9" lean-forward="false" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="util_Attention.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/util_Attention.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,7 +98,7 @@
       <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
+            <state relative-caret-position="612">
               <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -105,21 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="array_ops.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/ops/array_ops.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="1095" column="0" lean-forward="false" selection-start-line="1095" selection-start-column="0" selection-end-line="1095" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="lstm-3lr.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lstm-3lr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4446">
-              <caret line="253" column="62" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
+            <state relative-caret-position="533">
+              <caret line="161" column="39" lean-forward="false" selection-start-line="161" selection-start-column="20" selection-end-line="161" selection-end-column="39" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -141,12 +133,13 @@
       <find>saver_def</find>
       <find>restore_op_name</find>
       <find>float</find>
-      <find>float64</find>
       <find>step</find>
       <find>batches</find>
       <find>random_length</find>
       <find>encoder_outputs</find>
       <find>n_hidden_1</find>
+      <find>float32</find>
+      <find>float64</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -165,6 +158,8 @@
         <option value="$PROJECT_DIR$/util_Attention.py" />
         <option value="$PROJECT_DIR$/attention.py" />
         <option value="$PROJECT_DIR$/Seq2Seq.py" />
+        <option value="$PROJECT_DIR$/models/attention-MotionPrediction.py" />
+        <option value="$PROJECT_DIR$/attention-MotionPrediction.py" />
       </list>
     </option>
   </component>
@@ -208,8 +203,12 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -367,33 +366,64 @@
       <option name="presentableId" value="Default" />
       <updated>1514789919159</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add another file">
+      <created>1524575758981</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1524575758981</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-291" y="24" width="1217" height="1036" extended-state="6" />
+    <frame x="64" y="-11" width="1217" height="1036" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1909465" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1909465" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.35529158" sideWeight="0.5193416" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35567567" sideWeight="0.48065844" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35567567" sideWeight="0.48065844" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28185746" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28108108" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.35529158" sideWeight="0.5193416" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35567567" sideWeight="0.48065844" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1909465" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28108108" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add another file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add another file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -402,45 +432,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Autocoderlstm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4980">
-          <caret line="255" column="0" lean-forward="false" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/ops/math_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36880">
-          <caret line="1844" column="0" lean-forward="false" selection-start-line="1844" selection-start-column="0" selection-end-line="1844" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/client/session.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17760">
-          <caret line="888" column="0" lean-forward="false" selection-start-line="888" selection-start-column="0" selection-end-line="888" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/ops/gen_math_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54500">
-          <caret line="2725" column="0" lean-forward="false" selection-start-line="2725" selection-start-column="0" selection-end-line="2725" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/training/saver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32560">
-          <caret line="1665" column="0" lean-forward="false" selection-start-line="1665" selection-start-column="0" selection-end-line="1665" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/ops/gen_io_ops.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20140">
@@ -719,16 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lstm-3lr.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4446">
-          <caret line="253" column="62" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ReadData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3618">
@@ -739,13 +720,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/util_Attention.py">
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/astropy/modeling/functional_models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="405">
+          <caret line="495" column="4" lean-forward="false" selection-start-line="495" selection-start-column="4" selection-end-line="495" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-177">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/statsmodels/tsa/tests/results/results_arima.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-737">
+          <caret line="236" column="17" lean-forward="false" selection-start-line="236" selection-start-column="17" selection-end-line="236" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -757,10 +752,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AutocoderlstmTest.py">
+    <entry file="file://$PROJECT_DIR$/lstm-3lr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="328" column="23" lean-forward="false" selection-start-line="328" selection-start-column="20" selection-end-line="328" selection-end-column="23" />
+        <state relative-caret-position="533">
+          <caret line="161" column="39" lean-forward="false" selection-start-line="161" selection-start-column="20" selection-end-line="161" selection-end-column="39" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -769,7 +764,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
+        <state relative-caret-position="612">
           <caret line="34" column="24" lean-forward="false" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
@@ -777,10 +772,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Autocoderlstm.py">
+    <entry file="file://$PROJECT_DIR$/util_Attention.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="199" column="64" lean-forward="true" selection-start-line="183" selection-start-column="8" selection-end-line="199" selection-end-column="64" />
+        <state relative-caret-position="252">
+          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/contrib/tensor_forest/hybrid/python/models/hard_decisions_to_data_then_nn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="42" column="9" lean-forward="false" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Seq2Seq.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="887">
+          <caret line="236" column="50" lean-forward="false" selection-start-line="236" selection-start-column="32" selection-end-line="236" selection-end-column="50" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -789,7 +802,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/attention.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
+        <state relative-caret-position="18">
           <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -797,10 +810,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Seq2Seq.py">
+    <entry file="file://$PROJECT_DIR$/AutocoderlstmTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+        <state relative-caret-position="644">
+          <caret line="328" column="23" lean-forward="false" selection-start-line="328" selection-start-column="20" selection-end-line="328" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Autocoderlstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="238" column="31" lean-forward="false" selection-start-line="238" selection-start-column="31" selection-end-line="238" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/attention-MotionPrediction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

@@ -1,18 +1,22 @@
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
+import util as utl
+import ReadData
+import os
+
 
 PAD = 0
-EOS = 1
+EOS = np.zeros([132])
 vocab_size = 10
 input_embedding_size = 20
 encoder_hidden_units = 256
 decoder_hidden_units = 256
-batch_size = 20
+batch_size = 1
 n_input = 132
 fc1 = 256
-sequenceLength = 50
-
+sequenceLength = 20
+loss_track = []
 
 def random_sequences(length_from, length_to, vocab_lower, vocab_upper, batch_size):
     def random_length():
@@ -93,7 +97,7 @@ def make_batch(inputs, max_sequence_length=None):
 
 train_graph = tf.Graph()
 with train_graph.as_default():
-    encoder_inputs_raw = tf.placeholder(shape=(None, None, None), dtype=tf.float32, name='inputs_raw')
+    encoder_inputs_raw = tf.placeholder(shape=(None, None, None), dtype=tf.float32, name='encoder_inputs_raw')
     decoder_inputs_raw = tf.placeholder(shape=(None, None, None), dtype=tf.float32, name='decoder_inputs_raw')
     decoder_targets_raw = tf.placeholder(shape=(None, None, None), dtype=tf.float32, name='decoder_targets_raw')
 
@@ -104,30 +108,32 @@ with train_graph.as_default():
     wb11 = {
         'weights': tf.Variable(tf.random_normal([n_input, fc1], seed=1, dtype=tf.float32), dtype=tf.float32),
         'biases': tf.Variable(tf.constant(0.1, shape=[fc1, ], dtype=tf.float32), dtype=tf.float32),
-    }
+            }
     wb12 = {
         'weights': tf.Variable(tf.random_normal([fc1, fc1], seed=1, dtype=tf.float32),
                                dtype=tf.float32),
         'biases': tf.Variable(tf.constant(0.1, shape=[fc1, ], dtype=tf.float32), dtype=tf.float32),
-    }
+        }
     wb13 = {
         'weights': tf.Variable(tf.random_normal([fc1, fc1], seed=1, dtype=tf.float32),
                                dtype=tf.float32),
         'biases': tf.Variable(tf.constant(0.1, shape=[fc1, ], dtype=tf.float32), dtype=tf.float32),
-    }
+        }
     wb14 = {
         'weights': tf.Variable(tf.random_normal([fc1, fc1], seed=1, dtype=tf.float32),
                                dtype=tf.float32),
         'biases': tf.Variable(tf.constant(0.1, shape=[fc1, ], dtype=tf.float32), dtype=tf.float32),
-    }
+        }
     wb15 = {
         'weights': tf.Variable(tf.random_normal([fc1, fc1], seed=1, dtype=tf.float32),
                                dtype=tf.float32),
         'biases': tf.Variable(tf.constant(0.1, shape=[fc1, ], dtype=tf.float32), dtype=tf.float32),
-    }
+        }
+
+
 
     wbd1 = {
-        'weights': tf.Variable(tf.random_normal([n_input, fc1], seed=1, dtype=tf.float32), dtype=tf.float32),
+        'weights': tf.Variable(tf.random_normal([fc1, fc1], seed=1, dtype=tf.float32), dtype=tf.float32),
         'biases': tf.Variable(tf.constant(0.1, shape=[fc1, ], dtype=tf.float32), dtype=tf.float32),
     }
     wbd2 = {
@@ -146,9 +152,9 @@ with train_graph.as_default():
         'biases': tf.Variable(tf.constant(0.1, shape=[fc1, ], dtype=tf.float32), dtype=tf.float32),
     }
     wbd5 = {
-        'weights': tf.Variable(tf.random_normal([fc1, fc1], seed=1, dtype=tf.float32),
+        'weights': tf.Variable(tf.random_normal([fc1, n_input], seed=1, dtype=tf.float32),
                                dtype=tf.float32),
-        'biases': tf.Variable(tf.constant(0.1, shape=[fc1, ], dtype=tf.float32), dtype=tf.float32),
+        'biases': tf.Variable(tf.constant(0.1, shape=[n_input, ], dtype=tf.float32), dtype=tf.float32),
     }
 
     x_in = tf.einsum('ijk,kl->ijl', encoder_inputs_raw, wb11['weights'])
@@ -156,12 +162,12 @@ with train_graph.as_default():
     x_in = tf.einsum('ijk,kl->ijl', x_in, wb12['weights'])
     # x_in = tf.sigmoid(x_in)
     x_in = tf.einsum('ijk,kl->ijl', x_in, wb13['weights'])
-    x_in = tf.sigmoid(x_in)
+    #x_in = tf.sigmoid(x_in)
     # x_in = tf.sigmoid(x_in)
     x_in = tf.einsum('ijk,kl->ijl', x_in, wb14['weights'])
     # x_in = tf.sigmoid(x_in)
     x_in = tf.einsum('ijk,kl->ijl', x_in, wb15['weights'])
-    x_in = tf.sigmoid(x_in)
+    #x_in = tf.sigmoid(x_in)
 
     encoder_inputs_fc = x_in
 
@@ -185,49 +191,83 @@ with train_graph.as_default():
     # n = tf.Variable(tf.zeros([1,sequenceLength,132],dtype=tf.float32),trainable=False,dtype=tf.float32)
     decoder_cell = tf.contrib.rnn.LSTMCell(decoder_hidden_units)
     # att_d_e=decoder_inputs_embedded+N
-    att_d_e = decoder_inputs_raw + N
+
+    x_din = tf.einsum('ijk,kl->ijl', decoder_inputs_raw, wb11['weights'])
+    # x_in = tf.sigmoid(x_in)
+    x_din = tf.einsum('ijk,kl->ijl', x_din, wb12['weights'])
+    # x_in = tf.sigmoid(x_in)
+    x_din = tf.einsum('ijk,kl->ijl', x_din, wb13['weights'])
+    #x_din = tf.sigmoid(x_din)
+    # x_in = tf.sigmoid(x_in)
+    x_din = tf.einsum('ijk,kl->ijl', x_din, wb14['weights'])
+    # x_in = tf.sigmoid(x_in)
+    x_din = tf.einsum('ijk,kl->ijl', x_din, wb15['weights'])
+    #x_din = tf.sigmoid(x_din)
+
+
+    att_d_e = x_din + N
     decoder_outputs, decoder_final_state = tf.nn.dynamic_rnn(
         decoder_cell, att_d_e,
         initial_state=encoder_final_state,
         dtype=tf.float32, time_major=True, scope="plain_decoder",
     )
-
+    y_out = tf.einsum('ijk,kl->ijl', decoder_outputs, wbd1['weights'])
+    y_out = tf.einsum('ijk,kl->ijl', y_out, wbd2['weights'])
+    y_out = tf.einsum('ijk,kl->ijl', y_out, wbd3['weights'])
+    #y_out = tf.sigmoid(y_out)
+    y_out = tf.einsum('ijk,kl->ijl', y_out, wbd4['weights'])
+    y_out = tf.einsum('ijk,kl->ijl', y_out, wbd5['weights'])
+    #y_out = tf.sigmoid(y_out)
     # decoder_logits = tf.contrib.layers.linear(decoder_outputs, vocab_size)
     # decoder_prediction = tf.argmax(decoder_logits, 2)
     # stepwise_cross_entropy = tf.nn.softmax_cross_entropy_with_logits(
     #    labels=tf.one_hot(decoder_targets, depth=vocab_size, dtype=tf.float32),
     #    logits=decoder_logits,
     # )
-    pred = tf.rashape(decoder_outputs, [-1, n_input])
+    pred = tf.reshape(y_out, [-1, n_input])
 
     label = tf.reshape(decoder_targets_raw, [-1, n_input])
 
     loss = tf.reduce_mean(tf.pow(pred - label, 2))
     train_op = tf.train.AdamOptimizer().minimize(loss)
+    global_step = tf.Variable(0, name='global_step', trainable=False)
+    saver = tf.train.Saver()
 
-loss_track = []
-epochs = 3000
+epochs = 20000
 
 with tf.Session(graph=train_graph) as sess:
     sess.run(tf.global_variables_initializer())
+    start = global_step.eval()
+    ckpt_dir = "/home/cxr/BvhLstm1-2"
+    filename = "/home/cxr/7-2"
     for epoch in range(epochs):
-        batch = next(batches)
-        encoder_inputs_, _ = make_batch(batch)
-        decoder_targets_, _ = make_batch([(sequence) + [EOS] for sequence in batch])
-        decoder_inputs_, _ = make_batch([[EOS] + (sequence) for sequence in batch])
-        feed_dict = {encoder_inputs: encoder_inputs_, decoder_inputs: decoder_inputs_,
-                     decoder_targets: decoder_targets_,
-                     }
-        _, l = sess.run([train_op, loss], feed_dict)
-        loss_track.append(l)
-        if epoch == 0 or epoch % 1000 == 0:
-            print('loss: {}'.format(sess.run(loss, feed_dict)))
-            predict_ = sess.run(pred, feed_dict)
-            for i, (inp, pred) in enumerate(zip(feed_dict[encoder_inputs].T, pred.T)):
-                print('input > {}'.format(inp))
-                print('predicted > {}'.format(pred))
-                if i >= 20:
-                    break
+        print "tarining Epochs = ", epoch
+        r = ReadData.Actionreader()
+        v ,_= utl.readData(filename)
+        length = len(v)
+        i = 0
+        step = 0
+
+        batch_xs, batch_ys = utl.get_batch(i, v, sequenceLength, batch_size)
+
+        while batch_xs!=None and batch_ys!=None:
+            _,losss = sess.run([train_op,loss], feed_dict={
+                encoder_inputs_raw:  batch_xs,
+                decoder_targets_raw: batch_ys,
+                decoder_inputs_raw: batch_ys,
+            })
+            if step % 20 == 0:
+                print losss
+            if step % 200 == 0:
+                if not os.path.exists(ckpt_dir):
+                    os.makedirs(ckpt_dir)
+                    global_step.assign(step).eval()
+                    saver.save(sess, ckpt_dir + "/model.ckpt", global_step=global_step)
+            step += 1
+            i += 1
+            batch_xs, batch_ys = utl.get_batch(i, v, sequenceLength, batch_size)
+            loss_track.append(losss)
 
 plt.plot(loss_track)
 plt.show()
+

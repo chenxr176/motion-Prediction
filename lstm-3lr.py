@@ -1,10 +1,10 @@
 import tensorflow as tf
 import numpy as np
 from tensorflow.examples.tutorials.mnist import input_data
-import ReadData
-import os
 from tensorflow.contrib import rnn
 import util as utl
+import ReadData
+import os
 
 learning_rate = 0.001
 training_epochs = 500

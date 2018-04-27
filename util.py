@@ -30,20 +30,25 @@ def readData(filename):
         t+=1
     return v,timelist,classlist
 '''
-def get_batch(v,n,lenth,classnumber=12,batchsize = 1,n_sequence=2):
-    if n+batchsize+n_sequence>=lenth:
-        return None,None
-    b_x = []
-    b_y = []
-    for i in range(batchsize):
-        seqce_x = []
-        jj = 0
-        while jj<n_sequence:
-            seqce_x.append(v[jj+i+n])
-            jj+=1
-        b_y.append(v[jj+n+i])
-        b_x.append(seqce_x)
-    return b_x,b_y
+def get_batch(i,v,sequenceLength,batch_size):
+     lv = len(v)
+     lvv = len(v[0])
+     n = int(lv/sequenceLength)
+     nv = v[0:n*sequenceLength]
+     shape = np.shape(nv)
+
+     rv = np.reshape(nv, [shape[0]/sequenceLength, sequenceLength ,lvv])
+     if i+batch_size+1<len(rv):
+         return rv[i:i+batch_size],rv[i+1:i+batch_size+1]
+     else:
+         return None,None
+
+
+
+
+
+
+
 
 def transform(v,classnum):
     ret = []

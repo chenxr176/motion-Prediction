@@ -110,10 +110,15 @@ class Seq2SeqModel(object):
 
       attention_W1 = tf.Variable(tf.random_uniform([self.input_size,self.input_size],0,1,dtype = tf.float32,seed=1))
       attention_B1 = tf.Variable(tf.random_uniform([self.input_size,self.input_size],0,1,dtype=tf.float32,seed=1))
-      attention_W2 = tf.Variable(tf.random_uniform([self.input_size,self.input_size],0,1,dtype = tf.float32,seed=1))
+      attention_W2 = tf.Variable(tf.random_uniform([self.rnn_size,self.input_size],0,1,dtype = tf.float32,seed=1))
       attention_B2 = tf.Variable(tf.random_uniform([self.input_size],0,1,dtype = tf.float32,seed=1))
-
-
+      attention_W3 = tf.Variable (tf.random_uniform ([self.input_size*2, self.input_size], 0, 1, dtype=tf.float32, seed=1))
+      attention_B3 = tf.Variable (tf.random_uniform ([self.input_size], 0, 1, dtype=tf.float32, seed=1))
+      attention_W4 = tf.Variable (tf.random_uniform ([self.input_size * 2, self.input_size], 0, 1, dtype=tf.float32, seed=1))
+      attention_B4 = tf.Variable (tf.random_uniform ([self.input_size], 0, 1, dtype=tf.float32, seed=1))
+    attention_W5 = tf.Variable (
+      tf.random_uniform ([batch_size,1, self.input_size], 0, 1, dtype=tf.float32, seed=1))
+    attention_B5 = tf.Variable (tf.random_uniform ([self.input_size], 0, 1, dtype=tf.float32, seed=1))
 
     # === Add space decoder ===
     cell = rnn_cell_extensions.LinearSpaceDecoderWrapper( cell, self.input_size )
@@ -143,7 +148,15 @@ class Seq2SeqModel(object):
         #FirstAttentionType:
         encoder_outputs, enc_state = tf.nn.dynamic_rnn(cell, enc_in, dtype=tf.float32,time_major=True)# Encoder
         #Input Attention
-        N = tf.einsum('ijk,kl->ijl', encoder_outputs, attention_W1)
+        #N = tf.einsum('ijk,kl->ijl', encoder_outputs, attention_W1)
+        #hidden = enc_state
+        #hidden = tf.expand_dims(hidden,0)
+        #for i in range(encoder_outputs.get_shape()[0]):
+        #  hidden = tf.concat([hidden,tf.expand_dims(enc_state,0)],0)
+        #N = tf.einsum('ijk,kl->ijl', tf.concat([encoder_outputs,hidden],2), attention_W1)
+        #N = tf.transpose(N, [1, 0, 2])
+       # N = tf.nn.softmax(tf.reduce_sum(N, axis=1), 1)
+
 
 
 
@@ -172,23 +185,48 @@ class Seq2SeqModel(object):
 
 
 #global
-        attGloabal = tf.transpose(s,[1,0,2])
-        attGloabal = tf.nn.softmax(tf.reduce_sum(attGloabal,axis=1),1)
-        attGloabal =tf.tanh(tf.matmul(attGloabal,attention_W2)+attention_B2)
+        attGloabal = s
+        #attGloabal = tf.transpose(s,[1,0,2])
+        #attGloabal = tf.nn.softmax(tf.reduce_sum(attGloabal,axis=1),1)
+        #attGloabal =tf.tanh(tf.matmul(attGloabal,attention_W2)+attention_B2)
+        hidden = enc_state
+        hidden = tf.expand_dims(hidden, 0)
+        a = tf.shape(hidden)
+        for i in range(self.source_seq_len-2):
+          hidden = tf.concat([hidden, tf.expand_dims(enc_state, 0)], 0)
+        #attGloabal = tf.reshape(attGloabal,[batch_size,self.input_size])
+        dec_in = tf.reshape(dec_in,[target_seq_len,batch_size,self.input_size])
 
-        attGloabal = tf.reshape(attGloabal,[batch_size*self.input_size])
-        dec_in = tf.reshape(dec_in,[target_seq_len,batch_size*self.input_size])
-
-
-        dec_in = tf.add(dec_in,attGloabal)
-        dec_in = tf.reshape(dec_in, [target_seq_len, batch_size,self.input_size])
 
 
 
 
+        hidden = tf.sigmoid(tf.einsum('ijk,kl->ijl',hidden,attention_W2))
+        dec_in_part = tf.concat([attGloabal,hidden],2)
+        dec_in_part = tf.nn.softmax(tf.einsum('ijk,kl->ijl',dec_in_part,attention_W3))
+
+        dec_in_part = tf.transpose(dec_in_part,[1,0,2])
+        dec_in_part = tf.nn.softmax(tf.reduce_sum(dec_in_part,1))
+        dec_in_part = tf.expand_dims(dec_in_part,1)
+        dec_in_part = tf.transpose(dec_in_part,[1,0,2])
+
+        #dec_in_part = tf.reduce_sum(dec_in_part,0)
+        #dp = tf.expand_dims(dec_in_part,0)
+
+        dp = dec_in_part
+        for i in range(self.target_seq_len-1):
+          dp = tf.concat([dp, dec_in_part], 0)
+
+
+        dec_in_part = tf.concat([dec_in,dp],2)
+        dec_in =dec_in +  tf.nn.softmax(tf.add (tf.einsum('ijk,kl->ijl',dec_in_part,attention_W4),attention_B4))
 
 
         outputs, self.states = tf.nn.dynamic_rnn( cell,dec_in, initial_state=enc_state,dtype = tf.float32, time_major=True ) # Decoder
+
+
+
+
 
     elif architecture == "tied":
       outputs, self.states = tf.contrib.legacy_seq2seq.tied_rnn_seq2seq( enc_in, dec_in, cell, loop_function=lf )
